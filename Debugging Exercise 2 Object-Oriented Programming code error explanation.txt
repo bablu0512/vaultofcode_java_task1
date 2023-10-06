@@ -1,0 +1,51 @@
+Debugging Exercise 2: Object-Oriented Programming
+Objective: To identify and fix errors in a Java program that demonstrates basic
+object-oriented programming principles.
+
+class Car {
+private String make;
+private String model;
+public Car(String make, String model) {
+this.make = make;
+this.model = model;
+}
+public void start() {
+System.out.println("Starting the car.");
+}
+}
+public class Main {
+public static void main(String[] args) {
+Car car = new Car("Toyota", "Camry");
+car.start();
+car.stop();
+}
+}
+
+ERROR EXPLANATION AND CORRECTED CODE:by debugging and running the above code we get the following errors
+java: invalid method declaration; return type required
+we shoul create anew method for the stop so that we could avoid the above error
+
+CORRECTED CODE:
+class Car {
+    private String make;
+    private String model;
+    public Car(String make, String model) {
+        this.make = make;
+        this.model = model;
+    }
+    public void start() {
+        System.out.println("Starting the car.");
+    }
+
+    public void stop() {     // we should create a method stop in the public void before declaring it
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", "Camry");
+        car.start();
+        car.stop();       //method is derived from the line 12
+    }
+}
+
+

@@ -1,0 +1,47 @@
+Debugging Exercise 3: Exception Handling
+Objective: To identify and fix errors in a Java program that demonstrates exception
+handling.
+
+public class ExceptionHandling {
+public static void main(String[] args) {
+int[] numbers = {1, 2, 3, 4, 5};
+try {
+System.out.println(numbers[10]);
+} catch (ArrayIndexOutOfBoundsException e) {
+System.out.println("Array index out of bounds.");
+}
+int result = divide(10, 0);
+System.out.println("Result: " + result);
+}
+public static int divide(int a, int b) {
+return a / b;
+}
+}
+
+ERROR EXPLANATION AND CORRECTED CODE:by debugging and running the above code we get the following errors
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at ExceptionHandling.divide(ExceptionHandling2.java:13)
+	at ExceptionHandling.main(ExceptionHandling2.java:9)
+we can correct the above code by adding the try catch statement to the result line by this we can avoid the arithmetic exception and can print the statement
+
+CORRECTED CODE:
+public class ExceptionHandling {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        try {
+            System.out.println(numbers[10]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index out of bounds.");
+        }
+//   since a value divided by 0 is an arithmetic exception we can handle it by using the try catch statement without changing the values
+        try {
+            int result = divide(10, 0);
+        }catch (ArithmeticException e){
+                System.out.println("Cannot divide by zero.");
+        }
+    }
+    public static int divide(int a, int b) {
+        return a / b;
+    }
+}
+

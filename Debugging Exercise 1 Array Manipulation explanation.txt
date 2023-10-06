@@ -1,0 +1,24 @@
+Debugging Exercise 1: Array Manipulation
+Objective: To identify and fix errors in a Java program that manipulates arrays.
+
+public class ArrayManipulation {
+public static void main(String[] args) {
+int[] numbers = {1, 2, 3, 4, 5};
+for (int i = 0; i <= numbers.length; i++) {
+System.out.println(numbers[i]);
+}
+}
+}
+
+ERROR EXPLANATION AND CORRECTED CODE:by debugging and running the above code we get the following errors
+{arrayindexoutofbondsexception} we can correct it by chaging the for loop condition
+{incorrect loop condition because it causes arrayindexoutofboundexception so we should use i<numbers.length}
+CORRECTED CODE:
+public class manipulatingerrors {
+        public static void main(String[] args) {
+            int[] numbers = {1, 2, 3, 4, 5};
+            for (int i = 0; i < numbers.length; i++) {
+                System.out.println(numbers[i]);
+            }
+        }
+}
